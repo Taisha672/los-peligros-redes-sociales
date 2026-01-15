@@ -1,0 +1,38 @@
+// Mensaje de bienvenida al cargar la página
+window.onload = function () {
+    alert("Bienvenido/a 👋\nRecuerda usar las redes sociales de forma segura y responsable.");
+};
+
+// Resaltar enlaces del menú al hacer clic
+const enlaces = document.querySelectorAll("nav a");
+
+enlaces.forEach(enlace => {
+    enlace.addEventListener("click", function () {
+        enlaces.forEach(e => e.style.color = "black");
+        this.style.color = "red";
+    });
+});
+
+// Mensajes educativos según la sección
+document.getElementById("introduccion").addEventListener("mouseenter", function () {
+    console.log("Estás leyendo la introducción sobre los riesgos de las redes sociales.");
+});
+
+document.getElementById("peligros").addEventListener("mouseenter", function () {
+    alert("⚠️ Atención:\nEl ciberacoso y las noticias falsas son peligros reales en internet.");
+});
+
+document.getElementById("Objetivo").addEventListener("mouseenter", function () {
+    console.log("Objetivo: fomentar el uso responsable de internet.");
+});
+
+document.getElementById("conclusion").addEventListener("mouseenter", function () {
+    alert("✅ Recuerda:\nLa educación digital es clave para un internet más seguro.");
+});
+
+// Verificar si la imagen se carga correctamente
+const imagen = document.querySelector("img");
+
+imagen.onerror = function () {
+    alert("❌ La imagen no se pudo cargar. Verifica el nombre del archivo.");
+};
